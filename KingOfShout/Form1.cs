@@ -14,7 +14,7 @@ namespace KingOfShout
     public partial class Form1 : Form
     {
         private KingOfShoutBackend game;
-
+        private Form2 inGame;
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +25,10 @@ namespace KingOfShout
                 new ProgressChangedEventHandler(ConnectionWorker_ProgressChanged);
 
             textBox_IPaddress.Text = "127.0.0.1";
+
+            this.Panel_Ingame.Hide();
+            this.Panel_Result.Hide();
+
         }
 
         private void Start_Button_Click(object sender, EventArgs e)
@@ -98,6 +102,11 @@ namespace KingOfShout
                         this.Panel_NameRegister.Hide();
                         this.Panel_Menu.Hide();
                         this.Title.Hide();
+                        this.Width = 648;
+                        this.Height = 545;
+                        this.Panel_Ingame.Show();
+                        
+                        connection.SendData("margin");
                         worker.ReportProgress(2, "gamestart");
                     }else if(response == "attack")
                     {
@@ -130,6 +139,11 @@ namespace KingOfShout
         private void Button_Attack_Click(object sender, EventArgs e)
         {
             game.connection.SendData("9");
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            game.connection.Disconnect();
         }
     }
 

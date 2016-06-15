@@ -98,13 +98,13 @@ namespace SocketServer
     class MatchMaker
     {
         public static List<GameClient> clients;
-        public static List<Thread> gameRoom;
+        public static List<GameDealer> gameRoom;
         public static int pendingPlayer;
 
         static MatchMaker()
         {
             pendingPlayer = 0;
-            gameRoom = new List<Thread>();
+            gameRoom = new List<GameDealer>();
             clients = new List<GameClient>();
         }
 
@@ -170,45 +170,55 @@ namespace SocketServer
 
         public static void StartGame(int indexp1, int indexp2)
         {
-            GameClient p1 = MatchMaker.clients[indexp1];
-            GameClient p2 = MatchMaker.clients[indexp2];
-            Console.WriteLine("Start game for {0} vs {1}", p1.name, p2.name);
+            Console.WriteLine("Start game for {0} vs {1}", 
+                MatchMaker.clients[indexp1].name, 
+                MatchMaker.clients[indexp2].name);
 
             // TODO: Consider to use background worker instead of thread. Risk of losing GameDealer after <GameDealer>.(Deal) is done
             // TODO: Thread may effect multiple gameroom funciton.
-            GameDealer qq = new GameDealer();
-            qq.Deal(p1, p2);
+            GameDealer haha = new GameDealer(indexp1, indexp2);
+            haha.Deal();
+            GameDealer.dealers.Add(haha);
         }
         
     }// End of class MatchMaker
 
     class GameDealer
     {
-        GameClient p1;
-        GameClient p2;
+        public static List<GameDealer> dealers;
+        int p1;
+        int p2;
         BackgroundWorker PlayerOneReciever; // Recieve player one attack number
         BackgroundWorker PlayerTwoReciever; // Recieve player two attack number
 
-        public void Deal(GameClient p1, GameClient p2)
+        static GameDealer()
         {
-            GameDealer dealer = new GameDealer();
-            dealer.p1 = p1;
-            dealer.p2 = p2;
-            if (dealer.p1.reciever.IsBusy)
+            dealers = new List<GameDealer>();           
+        }
+        public GameDealer(int p1, int p2)
+        {
+            this.p1 = p1;
+            this.p2 = p2;
+        }
+        public void Deal()
+        {
+            dealers.Add(this);
+            
+            if (MatchMaker.clients[p1].reciever.IsBusy)
             {
-                dealer.p1.reciever.CancelAsync();
+                MatchMaker.clients[p1].reciever.CancelAsync();
             }
-            if (dealer.p2.reciever.IsBusy)
+            if (MatchMaker.clients[p2].reciever.IsBusy)
             {
-                dealer.p2.reciever.CancelAsync();
+                MatchMaker.clients[p2].reciever.CancelAsync();
             }
-            dealer.GameStart();
+            this.GameStart();
         }
 
         private void Broadcast(string message)
         {
-            p1.connection.SendData(message);
-            p2.connection.SendData(message);
+            MatchMaker.clients[p1].connection.SendData(message);
+            MatchMaker.clients[p2].connection.SendData(message);
         }
 
         private void GameStart()
@@ -222,38 +232,57 @@ namespace SocketServer
         {
             // Build reciever for both player
             PlayerOneReciever = new BackgroundWorker();
+            PlayerTwoReciever = new BackgroundWorker();
+            
             PlayerOneReciever.WorkerReportsProgress = true;
+            PlayerOneReciever.WorkerSupportsCancellation = true;
             PlayerOneReciever.DoWork += new DoWorkEventHandler(this.HandleRecievedData);
             PlayerOneReciever.ProgressChanged += new ProgressChangedEventHandler(this.onDataRecieved);
 
-            PlayerTwoReciever = new BackgroundWorker();
             PlayerTwoReciever.WorkerReportsProgress = true;
+            PlayerTwoReciever.WorkerSupportsCancellation = true;
             PlayerTwoReciever.DoWork += new DoWorkEventHandler(this.HandleRecievedData);
             PlayerTwoReciever.ProgressChanged += new ProgressChangedEventHandler(this.onDataRecieved);
-
+            
             // Start the BGworker
             PlayerOneReciever.RunWorkerAsync(p1);
             PlayerTwoReciever.RunWorkerAsync(p2);
         }
 
+        private void StopRecievers()
+        {
+            PlayerOneReciever.CancelAsync();
+            PlayerTwoReciever.CancelAsync();
+        }
+
         private void InitializePlayerStatus()
         {
-            p1.hp = 100;
-            p1.opponent = p2;
-            p2.hp = 100;
-            p2.opponent = p1;
+            MatchMaker.clients[p1].hp = 100;
+            MatchMaker.clients[p1].opponent = MatchMaker.clients[p2];
+            MatchMaker.clients[p2].hp = 100;
+            MatchMaker.clients[p2].opponent = MatchMaker.clients[p1];
         }
 
         private void HandleRecievedData(object sender, DoWorkEventArgs e)
         {
-            GameClient player = (GameClient)e.Argument;
+            int index = (int)e.Argument;
             BackgroundWorker worker = sender as BackgroundWorker;
             while (true)
             {
-                string attack = player.connection.Recieve();
-                
-                string[] msg = new string[2] { player.name, attack };
-                worker.ReportProgress(3, msg);
+                try
+                {
+                    string attack = MatchMaker.clients[index].connection.Recieve();
+                    string[] msg = new string[2] { MatchMaker.clients[index].name, attack };
+                    worker.ReportProgress(3, msg);
+                }
+                catch
+                {
+                    StopRecievers();
+                    MatchMaker.clients[p2].connection.Disconnect();
+                    MatchMaker.clients[p1].connection.Disconnect();
+                    Console.WriteLine("Errro");
+                    Console.Read();
+                }
             }
         }
 
@@ -261,19 +290,32 @@ namespace SocketServer
         {
             GameClient player;
             string[] msg = e.UserState as string[];
-            if (msg[0] == this.p1.name)
-            { player = this.p1; }
+            if (msg[0] == MatchMaker.clients[p1].name)
+            { player = MatchMaker.clients[p1];
+                Console.WriteLine("bind p1 as {0}", player.name);
+            }
             else
-            { player = this.p2; }
+            { player = MatchMaker.clients[p2];
+                Console.WriteLine("bind p2 as {0}", player.name);
+            }
             string damage = msg[1];
-            
-            player.opponent.hp -= int.Parse(damage);
-            player.connection.SendData("attack");
-            player.connection.SendData(player.hp.ToString());
-            player.connection.SendData(player.opponent.hp.ToString());
-            player.opponent.connection.SendData("attacked");
-            player.opponent.connection.SendData(player.hp.ToString());
-            player.opponent.connection.SendData(player.opponent.hp.ToString());
+            try {
+                player.opponent.hp -= int.Parse(damage);
+                player.connection.SendData("attack");
+                player.connection.SendData(player.hp.ToString());
+                player.connection.SendData(player.opponent.hp.ToString());
+                player.opponent.connection.SendData("attacked");
+                player.opponent.connection.SendData(player.hp.ToString());
+                player.opponent.connection.SendData(player.opponent.hp.ToString());
+            }
+            catch
+            {
+                StopRecievers();
+                MatchMaker.clients[p2].connection.Disconnect();
+                MatchMaker.clients[p1].connection.Disconnect();
+                Console.WriteLine("Error sending backmessage");
+                        Console.Read();
+            }
             Console.WriteLine("Player:{0} has attacked Player:{1}, damage:{2}",player.name,player.opponent.name,damage);
         }
     }

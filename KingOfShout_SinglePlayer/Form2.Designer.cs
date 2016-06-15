@@ -1,4 +1,4 @@
-﻿namespace KingOfShout
+﻿namespace KingOfShout_SinglePlayer
 {
     partial class Form2
     {
@@ -125,7 +125,7 @@
             this.enemygreen5.Image = ((System.Drawing.Image)(resources.GetObject("enemygreen5.Image")));
             this.enemygreen5.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemygreen5.InitialImage")));
             this.enemygreen5.Location = new System.Drawing.Point(387, 79);
-            this.enemygreen5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemygreen5.Margin = new System.Windows.Forms.Padding(4);
             this.enemygreen5.Name = "enemygreen5";
             this.enemygreen5.Size = new System.Drawing.Size(15, 30);
             this.enemygreen5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -137,7 +137,7 @@
             this.enemygreen4.Image = ((System.Drawing.Image)(resources.GetObject("enemygreen4.Image")));
             this.enemygreen4.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemygreen4.InitialImage")));
             this.enemygreen4.Location = new System.Drawing.Point(410, 79);
-            this.enemygreen4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemygreen4.Margin = new System.Windows.Forms.Padding(4);
             this.enemygreen4.Name = "enemygreen4";
             this.enemygreen4.Size = new System.Drawing.Size(15, 30);
             this.enemygreen4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,7 +149,7 @@
             this.enemygreen3.Image = ((System.Drawing.Image)(resources.GetObject("enemygreen3.Image")));
             this.enemygreen3.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemygreen3.InitialImage")));
             this.enemygreen3.Location = new System.Drawing.Point(432, 79);
-            this.enemygreen3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemygreen3.Margin = new System.Windows.Forms.Padding(4);
             this.enemygreen3.Name = "enemygreen3";
             this.enemygreen3.Size = new System.Drawing.Size(15, 30);
             this.enemygreen3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +161,7 @@
             this.enemygreen2.Image = ((System.Drawing.Image)(resources.GetObject("enemygreen2.Image")));
             this.enemygreen2.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemygreen2.InitialImage")));
             this.enemygreen2.Location = new System.Drawing.Point(455, 79);
-            this.enemygreen2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemygreen2.Margin = new System.Windows.Forms.Padding(4);
             this.enemygreen2.Name = "enemygreen2";
             this.enemygreen2.Size = new System.Drawing.Size(15, 30);
             this.enemygreen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -173,7 +173,7 @@
             this.enemygreen1.Image = ((System.Drawing.Image)(resources.GetObject("enemygreen1.Image")));
             this.enemygreen1.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemygreen1.InitialImage")));
             this.enemygreen1.Location = new System.Drawing.Point(478, 79);
-            this.enemygreen1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemygreen1.Margin = new System.Windows.Forms.Padding(4);
             this.enemygreen1.Name = "enemygreen1";
             this.enemygreen1.Size = new System.Drawing.Size(15, 30);
             this.enemygreen1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -185,7 +185,7 @@
             this.enemyyellow1.Image = ((System.Drawing.Image)(resources.GetObject("enemyyellow1.Image")));
             this.enemyyellow1.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyyellow1.InitialImage")));
             this.enemyyellow1.Location = new System.Drawing.Point(364, 79);
-            this.enemyyellow1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyyellow1.Margin = new System.Windows.Forms.Padding(4);
             this.enemyyellow1.Name = "enemyyellow1";
             this.enemyyellow1.Size = new System.Drawing.Size(15, 30);
             this.enemyyellow1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -197,7 +197,7 @@
             this.enemyyellow2.Image = ((System.Drawing.Image)(resources.GetObject("enemyyellow2.Image")));
             this.enemyyellow2.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyyellow2.InitialImage")));
             this.enemyyellow2.Location = new System.Drawing.Point(342, 79);
-            this.enemyyellow2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyyellow2.Margin = new System.Windows.Forms.Padding(4);
             this.enemyyellow2.Name = "enemyyellow2";
             this.enemyyellow2.Size = new System.Drawing.Size(15, 30);
             this.enemyyellow2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -209,7 +209,7 @@
             this.enemyyellow5.Image = ((System.Drawing.Image)(resources.GetObject("enemyyellow5.Image")));
             this.enemyyellow5.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyyellow5.InitialImage")));
             this.enemyyellow5.Location = new System.Drawing.Point(274, 79);
-            this.enemyyellow5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyyellow5.Margin = new System.Windows.Forms.Padding(4);
             this.enemyyellow5.Name = "enemyyellow5";
             this.enemyyellow5.Size = new System.Drawing.Size(15, 30);
             this.enemyyellow5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -221,7 +221,7 @@
             this.enemyyellow4.Image = ((System.Drawing.Image)(resources.GetObject("enemyyellow4.Image")));
             this.enemyyellow4.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyyellow4.InitialImage")));
             this.enemyyellow4.Location = new System.Drawing.Point(296, 79);
-            this.enemyyellow4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyyellow4.Margin = new System.Windows.Forms.Padding(4);
             this.enemyyellow4.Name = "enemyyellow4";
             this.enemyyellow4.Size = new System.Drawing.Size(15, 30);
             this.enemyyellow4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -233,7 +233,7 @@
             this.enemyyellow3.Image = ((System.Drawing.Image)(resources.GetObject("enemyyellow3.Image")));
             this.enemyyellow3.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyyellow3.InitialImage")));
             this.enemyyellow3.Location = new System.Drawing.Point(319, 79);
-            this.enemyyellow3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyyellow3.Margin = new System.Windows.Forms.Padding(4);
             this.enemyyellow3.Name = "enemyyellow3";
             this.enemyyellow3.Size = new System.Drawing.Size(15, 30);
             this.enemyyellow3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -245,7 +245,7 @@
             this.enemyred1.Image = ((System.Drawing.Image)(resources.GetObject("enemyred1.Image")));
             this.enemyred1.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyred1.InitialImage")));
             this.enemyred1.Location = new System.Drawing.Point(251, 79);
-            this.enemyred1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyred1.Margin = new System.Windows.Forms.Padding(4);
             this.enemyred1.Name = "enemyred1";
             this.enemyred1.Size = new System.Drawing.Size(15, 30);
             this.enemyred1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -257,7 +257,7 @@
             this.enemyred2.Image = ((System.Drawing.Image)(resources.GetObject("enemyred2.Image")));
             this.enemyred2.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyred2.InitialImage")));
             this.enemyred2.Location = new System.Drawing.Point(228, 79);
-            this.enemyred2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyred2.Margin = new System.Windows.Forms.Padding(4);
             this.enemyred2.Name = "enemyred2";
             this.enemyred2.Size = new System.Drawing.Size(15, 30);
             this.enemyred2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -269,7 +269,7 @@
             this.enemyred3.Image = ((System.Drawing.Image)(resources.GetObject("enemyred3.Image")));
             this.enemyred3.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyred3.InitialImage")));
             this.enemyred3.Location = new System.Drawing.Point(206, 79);
-            this.enemyred3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyred3.Margin = new System.Windows.Forms.Padding(4);
             this.enemyred3.Name = "enemyred3";
             this.enemyred3.Size = new System.Drawing.Size(15, 30);
             this.enemyred3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -281,7 +281,7 @@
             this.enemyred4.Image = ((System.Drawing.Image)(resources.GetObject("enemyred4.Image")));
             this.enemyred4.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyred4.InitialImage")));
             this.enemyred4.Location = new System.Drawing.Point(183, 79);
-            this.enemyred4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyred4.Margin = new System.Windows.Forms.Padding(4);
             this.enemyred4.Name = "enemyred4";
             this.enemyred4.Size = new System.Drawing.Size(15, 30);
             this.enemyred4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -293,7 +293,7 @@
             this.enemyred5.Image = ((System.Drawing.Image)(resources.GetObject("enemyred5.Image")));
             this.enemyred5.InitialImage = ((System.Drawing.Image)(resources.GetObject("enemyred5.InitialImage")));
             this.enemyred5.Location = new System.Drawing.Point(160, 79);
-            this.enemyred5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enemyred5.Margin = new System.Windows.Forms.Padding(4);
             this.enemyred5.Name = "enemyred5";
             this.enemyred5.Size = new System.Drawing.Size(15, 30);
             this.enemyred5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -315,18 +315,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("PMingLiU", 12F);
-            this.label2.Location = new System.Drawing.Point(119, 17);
+            this.label2.Location = new System.Drawing.Point(132, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Enemy ID:";
+            this.label2.Text = "Enemy:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("PMingLiU", 12F);
-            this.label3.Location = new System.Drawing.Point(244, 17);
+            this.label3.Location = new System.Drawing.Point(224, 17);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 20);
@@ -337,7 +337,7 @@
             // 
             this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
             this.pictureBox16.Location = new System.Drawing.Point(251, 147);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(173, 222);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -347,7 +347,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(19, 147);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(184, 222);
             this.richTextBox1.TabIndex = 21;
@@ -356,7 +356,7 @@
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(19, 454);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(495, 119);
             this.richTextBox2.TabIndex = 22;
@@ -408,7 +408,7 @@
             this.playerred5.Image = ((System.Drawing.Image)(resources.GetObject("playerred5.Image")));
             this.playerred5.InitialImage = ((System.Drawing.Image)(resources.GetObject("playerred5.InitialImage")));
             this.playerred5.Location = new System.Drawing.Point(160, 406);
-            this.playerred5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playerred5.Margin = new System.Windows.Forms.Padding(4);
             this.playerred5.Name = "playerred5";
             this.playerred5.Size = new System.Drawing.Size(15, 30);
             this.playerred5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -420,7 +420,7 @@
             this.playerred1.Image = ((System.Drawing.Image)(resources.GetObject("playerred1.Image")));
             this.playerred1.InitialImage = ((System.Drawing.Image)(resources.GetObject("playerred1.InitialImage")));
             this.playerred1.Location = new System.Drawing.Point(251, 406);
-            this.playerred1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playerred1.Margin = new System.Windows.Forms.Padding(4);
             this.playerred1.Name = "playerred1";
             this.playerred1.Size = new System.Drawing.Size(15, 30);
             this.playerred1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -432,7 +432,7 @@
             this.playerred2.Image = ((System.Drawing.Image)(resources.GetObject("playerred2.Image")));
             this.playerred2.InitialImage = ((System.Drawing.Image)(resources.GetObject("playerred2.InitialImage")));
             this.playerred2.Location = new System.Drawing.Point(228, 406);
-            this.playerred2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playerred2.Margin = new System.Windows.Forms.Padding(4);
             this.playerred2.Name = "playerred2";
             this.playerred2.Size = new System.Drawing.Size(15, 30);
             this.playerred2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -444,7 +444,7 @@
             this.playerred3.Image = ((System.Drawing.Image)(resources.GetObject("playerred3.Image")));
             this.playerred3.InitialImage = ((System.Drawing.Image)(resources.GetObject("playerred3.InitialImage")));
             this.playerred3.Location = new System.Drawing.Point(206, 406);
-            this.playerred3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playerred3.Margin = new System.Windows.Forms.Padding(4);
             this.playerred3.Name = "playerred3";
             this.playerred3.Size = new System.Drawing.Size(15, 30);
             this.playerred3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -456,7 +456,7 @@
             this.playerred4.Image = ((System.Drawing.Image)(resources.GetObject("playerred4.Image")));
             this.playerred4.InitialImage = ((System.Drawing.Image)(resources.GetObject("playerred4.InitialImage")));
             this.playerred4.Location = new System.Drawing.Point(183, 406);
-            this.playerred4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playerred4.Margin = new System.Windows.Forms.Padding(4);
             this.playerred4.Name = "playerred4";
             this.playerred4.Size = new System.Drawing.Size(15, 30);
             this.playerred4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -468,7 +468,7 @@
             this.playeryellow1.Image = ((System.Drawing.Image)(resources.GetObject("playeryellow1.Image")));
             this.playeryellow1.InitialImage = ((System.Drawing.Image)(resources.GetObject("playeryellow1.InitialImage")));
             this.playeryellow1.Location = new System.Drawing.Point(364, 406);
-            this.playeryellow1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playeryellow1.Margin = new System.Windows.Forms.Padding(4);
             this.playeryellow1.Name = "playeryellow1";
             this.playeryellow1.Size = new System.Drawing.Size(15, 30);
             this.playeryellow1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -480,7 +480,7 @@
             this.playeryellow2.Image = ((System.Drawing.Image)(resources.GetObject("playeryellow2.Image")));
             this.playeryellow2.InitialImage = ((System.Drawing.Image)(resources.GetObject("playeryellow2.InitialImage")));
             this.playeryellow2.Location = new System.Drawing.Point(342, 406);
-            this.playeryellow2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playeryellow2.Margin = new System.Windows.Forms.Padding(4);
             this.playeryellow2.Name = "playeryellow2";
             this.playeryellow2.Size = new System.Drawing.Size(15, 30);
             this.playeryellow2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -492,7 +492,7 @@
             this.playeryellow3.Image = ((System.Drawing.Image)(resources.GetObject("playeryellow3.Image")));
             this.playeryellow3.InitialImage = ((System.Drawing.Image)(resources.GetObject("playeryellow3.InitialImage")));
             this.playeryellow3.Location = new System.Drawing.Point(319, 406);
-            this.playeryellow3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playeryellow3.Margin = new System.Windows.Forms.Padding(4);
             this.playeryellow3.Name = "playeryellow3";
             this.playeryellow3.Size = new System.Drawing.Size(15, 30);
             this.playeryellow3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -504,7 +504,7 @@
             this.playeryellow4.Image = ((System.Drawing.Image)(resources.GetObject("playeryellow4.Image")));
             this.playeryellow4.InitialImage = ((System.Drawing.Image)(resources.GetObject("playeryellow4.InitialImage")));
             this.playeryellow4.Location = new System.Drawing.Point(296, 406);
-            this.playeryellow4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playeryellow4.Margin = new System.Windows.Forms.Padding(4);
             this.playeryellow4.Name = "playeryellow4";
             this.playeryellow4.Size = new System.Drawing.Size(15, 30);
             this.playeryellow4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -516,7 +516,7 @@
             this.playeryellow5.Image = ((System.Drawing.Image)(resources.GetObject("playeryellow5.Image")));
             this.playeryellow5.InitialImage = ((System.Drawing.Image)(resources.GetObject("playeryellow5.InitialImage")));
             this.playeryellow5.Location = new System.Drawing.Point(274, 406);
-            this.playeryellow5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playeryellow5.Margin = new System.Windows.Forms.Padding(4);
             this.playeryellow5.Name = "playeryellow5";
             this.playeryellow5.Size = new System.Drawing.Size(15, 30);
             this.playeryellow5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -528,7 +528,7 @@
             this.playergreen1.Image = ((System.Drawing.Image)(resources.GetObject("playergreen1.Image")));
             this.playergreen1.InitialImage = ((System.Drawing.Image)(resources.GetObject("playergreen1.InitialImage")));
             this.playergreen1.Location = new System.Drawing.Point(478, 406);
-            this.playergreen1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playergreen1.Margin = new System.Windows.Forms.Padding(4);
             this.playergreen1.Name = "playergreen1";
             this.playergreen1.Size = new System.Drawing.Size(15, 30);
             this.playergreen1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -540,7 +540,7 @@
             this.playergreen2.Image = ((System.Drawing.Image)(resources.GetObject("playergreen2.Image")));
             this.playergreen2.InitialImage = ((System.Drawing.Image)(resources.GetObject("playergreen2.InitialImage")));
             this.playergreen2.Location = new System.Drawing.Point(455, 406);
-            this.playergreen2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playergreen2.Margin = new System.Windows.Forms.Padding(4);
             this.playergreen2.Name = "playergreen2";
             this.playergreen2.Size = new System.Drawing.Size(15, 30);
             this.playergreen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -552,7 +552,7 @@
             this.playergreen3.Image = ((System.Drawing.Image)(resources.GetObject("playergreen3.Image")));
             this.playergreen3.InitialImage = ((System.Drawing.Image)(resources.GetObject("playergreen3.InitialImage")));
             this.playergreen3.Location = new System.Drawing.Point(432, 406);
-            this.playergreen3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playergreen3.Margin = new System.Windows.Forms.Padding(4);
             this.playergreen3.Name = "playergreen3";
             this.playergreen3.Size = new System.Drawing.Size(15, 30);
             this.playergreen3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -564,7 +564,7 @@
             this.playergreen4.Image = ((System.Drawing.Image)(resources.GetObject("playergreen4.Image")));
             this.playergreen4.InitialImage = ((System.Drawing.Image)(resources.GetObject("playergreen4.InitialImage")));
             this.playergreen4.Location = new System.Drawing.Point(410, 406);
-            this.playergreen4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playergreen4.Margin = new System.Windows.Forms.Padding(4);
             this.playergreen4.Name = "playergreen4";
             this.playergreen4.Size = new System.Drawing.Size(15, 30);
             this.playergreen4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -576,7 +576,7 @@
             this.playergreen5.Image = ((System.Drawing.Image)(resources.GetObject("playergreen5.Image")));
             this.playergreen5.InitialImage = ((System.Drawing.Image)(resources.GetObject("playergreen5.InitialImage")));
             this.playergreen5.Location = new System.Drawing.Point(387, 406);
-            this.playergreen5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playergreen5.Margin = new System.Windows.Forms.Padding(4);
             this.playergreen5.Name = "playergreen5";
             this.playergreen5.Size = new System.Drawing.Size(15, 30);
             this.playergreen5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -597,8 +597,8 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(575, 738);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(776, 42);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(528, 646);
             this.panel1.TabIndex = 42;
@@ -646,7 +646,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(291, 560);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 52);
             this.button2.TabIndex = 7;
@@ -656,7 +656,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(64, 560);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 52);
             this.button1.TabIndex = 6;
@@ -707,7 +707,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(119, 30);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(289, 270);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -718,7 +718,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(104, 54);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(316, 236);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -776,10 +776,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1724, 1047);
+            this.ClientSize = new System.Drawing.Size(1331, 723);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.enemygreen5)).EndInit();
