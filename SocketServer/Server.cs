@@ -134,7 +134,6 @@ namespace SocketServer
 
             while (true)
             {
-                Thread.Sleep(0);
                 if (MatchMaker.pendingPlayer > 1)
                 {
                     MatchMaker.pendingPlayer -= 2;
@@ -195,6 +194,14 @@ namespace SocketServer
             GameDealer dealer = new GameDealer();
             dealer.p1 = p1;
             dealer.p2 = p2;
+            if (dealer.p1.reciever.IsBusy)
+            {
+                dealer.p1.reciever.CancelAsync();
+            }
+            if (dealer.p2.reciever.IsBusy)
+            {
+                dealer.p2.reciever.CancelAsync();
+            }
             dealer.GameStart();
         }
 
@@ -244,7 +251,7 @@ namespace SocketServer
             while (true)
             {
                 string attack = player.connection.Recieve();
-                Console.WriteLine("ATTACK{0}", attack);
+                
                 string[] msg = new string[2] { player.name, attack };
                 worker.ReportProgress(3, msg);
             }
@@ -259,17 +266,14 @@ namespace SocketServer
             else
             { player = this.p2; }
             string damage = msg[1];
-            Console.WriteLine(msg);
-            Console.WriteLine(player.name);
-            Console.WriteLine(damage);
-            /*
+            
             player.opponent.hp -= int.Parse(damage);
             player.connection.SendData("attack");
             player.connection.SendData(player.hp.ToString());
             player.connection.SendData(player.opponent.hp.ToString());
             player.opponent.connection.SendData("attacked");
             player.opponent.connection.SendData(player.hp.ToString());
-            player.opponent.connection.SendData(player.opponent.hp.ToString());*/
+            player.opponent.connection.SendData(player.opponent.hp.ToString());
             Console.WriteLine("Player:{0} has attacked Player:{1}, damage:{2}",player.name,player.opponent.name,damage);
         }
     }
