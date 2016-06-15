@@ -213,12 +213,20 @@ namespace SocketServer
 
         private void InitializePlayerRecievers()
         {
+            // Build reciever for both player
             PlayerOneReciever = new BackgroundWorker();
-            PlayerTwoReciever = new BackgroundWorker();
             PlayerOneReciever.WorkerReportsProgress = true;
-            PlayerTwoReciever.WorkerReportsProgress = true;
             PlayerOneReciever.DoWork += new DoWorkEventHandler(this.HandleRecievedData);
+            PlayerOneReciever.ProgressChanged += new ProgressChangedEventHandler(this.onDataRecieved);
 
+            PlayerTwoReciever = new BackgroundWorker();
+            PlayerTwoReciever.WorkerReportsProgress = true;
+            PlayerTwoReciever.DoWork += new DoWorkEventHandler(this.HandleRecievedData);
+            PlayerTwoReciever.ProgressChanged += new ProgressChangedEventHandler(this.onDataRecieved);
+
+            // Start the BGworker
+            PlayerOneReciever.RunWorkerAsync(p1);
+            PlayerTwoReciever.RunWorkerAsync(p2);
         }
 
         private void InitializePlayerStatus()
@@ -236,20 +244,33 @@ namespace SocketServer
             while (true)
             {
                 string attack = player.connection.Recieve();
-                worker.ReportProgress(3, player.name);
+                Console.WriteLine("ATTACK{0}", attack);
+                string[] msg = new string[2] { player.name, attack };
+                worker.ReportProgress(3, msg);
             }
         }
 
-        private void onDataRecieved(object sender, RunWorkerCompletedEventArgs e)
+        private void onDataRecieved(object sender, ProgressChangedEventArgs e)
         {
-            
-            player.opponent.hp -= int.Parse(attack);
+            GameClient player;
+            string[] msg = e.UserState as string[];
+            if (msg[0] == this.p1.name)
+            { player = this.p1; }
+            else
+            { player = this.p2; }
+            string damage = msg[1];
+            Console.WriteLine(msg);
+            Console.WriteLine(player.name);
+            Console.WriteLine(damage);
+            /*
+            player.opponent.hp -= int.Parse(damage);
             player.connection.SendData("attack");
             player.connection.SendData(player.hp.ToString());
             player.connection.SendData(player.opponent.hp.ToString());
             player.opponent.connection.SendData("attacked");
             player.opponent.connection.SendData(player.hp.ToString());
-            player.opponent.connection.SendData(player.opponent.hp.ToString());
+            player.opponent.connection.SendData(player.opponent.hp.ToString());*/
+            Console.WriteLine("Player:{0} has attacked Player:{1}, damage:{2}",player.name,player.opponent.name,damage);
         }
     }
     
@@ -261,7 +282,7 @@ namespace SocketServer
         public int status;
         public int hp;
         public GameClient opponent;
-        public  BackgroundWorker reciever;
+        public BackgroundWorker reciever;
 
         public GameClient(TcpClient s)
         {

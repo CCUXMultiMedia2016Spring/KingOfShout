@@ -94,18 +94,23 @@ namespace KingOfShout
                         worker.ReportProgress(1, "registered");
                     }else if(response == "gamestart")
                     {
-                        connection.SendData("9");
+                        this.Panel_IPaddress.Hide();
+                        this.Panel_NameRegister.Hide();
+                        this.Panel_Menu.Hide();
+                        this.Title.Hide();
                         worker.ReportProgress(2, "gamestart");
                     }else if(response == "attack")
                     {
                         worker.ReportProgress(2, "attack");
                         int myhp = int.Parse(connection.Recieve());
                         int ophp = int.Parse(connection.Recieve());
+                        this.Textbox_debug.AppendText(string.Format("Attack!!!,MyHP:{0},BadguyHP:{1}", myhp, ophp));
                     }else if(response == "attacked")
                     {
                         worker.ReportProgress(3, "attacked");
                         int ophp = int.Parse(connection.Recieve());
                         int myhp = int.Parse(connection.Recieve());
+                        this.Textbox_debug.AppendText(string.Format("Attacked!!!!,MyHP:{0},BadguyHP:{1}", myhp, ophp));
                     }
                 }
             }
@@ -120,6 +125,11 @@ namespace KingOfShout
         {
             ConnectionWorker.CancelAsync();
             game.connection.Disconnect();
+        }
+
+        private void Button_Attack_Click(object sender, EventArgs e)
+        {
+            game.connection.SendData("9");
         }
     }
 
