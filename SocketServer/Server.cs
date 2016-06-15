@@ -236,12 +236,13 @@ namespace SocketServer
             while (true)
             {
                 string attack = player.connection.Recieve();
-                worker.ReportProgress(3, player);
+                worker.ReportProgress(3, player.name);
             }
         }
 
-        private void onDataRecieved()
+        private void onDataRecieved(object sender, RunWorkerCompletedEventArgs e)
         {
+            
             player.opponent.hp -= int.Parse(attack);
             player.connection.SendData("attack");
             player.connection.SendData(player.hp.ToString());
